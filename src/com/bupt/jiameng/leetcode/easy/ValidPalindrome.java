@@ -14,11 +14,11 @@ public class ValidPalindrome {
         Stack<Character> stack = new Stack<Character>();
 
         for(int i = 0; i < s.length(); i++){
-            if(s.charAt(i) >= 'a' && s.charAt(i) <= 'z')
+            if(Character.isDigit(s.charAt(i)) || Character.isLetter(s.charAt(i)))
                 stack.push(s.charAt(i));
         }
         for(int i = 0; i < s.length(); i++){
-            if(s.charAt(i) >= 'a' && s.charAt(i) <= 'z'){
+            if(Character.isDigit(s.charAt(i)) || Character.isLetter(s.charAt(i))){
                 if(s.charAt(i) == stack.pop())
                     continue;
                 else
@@ -30,6 +30,6 @@ public class ValidPalindrome {
 
     public static void main(String[] args){
         ValidPalindrome v = new ValidPalindrome();
-        System.out.println(v.isPalindrome("race a car"));
+        System.out.println(v.isPalindrome("A man, a plan, a canal: Panama"));
     }
 }
