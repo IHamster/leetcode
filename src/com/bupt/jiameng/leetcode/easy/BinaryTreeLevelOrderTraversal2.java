@@ -8,7 +8,7 @@ import java.util.Queue;
 /**
  * Created by Administrator on 2015/3/21.
  */
-public class BinaryTreeLevelOrderTraversal {
+public class BinaryTreeLevelOrderTraversal2 {
     //bfs
 //    public List<List<Integer>> levelOrderBottom(TreeNode root) {
 //        Queue<TreeNode> queue = new LinkedList<TreeNode>();
