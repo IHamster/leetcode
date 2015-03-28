@@ -6,7 +6,6 @@ package com.bupt.jiameng.leetcode.easy;
 public class PlusOne {
   public int[] plusOne(int[] digits) {
     int[] sum = new int[digits.length + 1];
-    int[] sum1 = new int[digits.length];
     int cache = 0;//保存进位
     for (int i = 0; i < digits.length; i++) {
       int tmp = 0;
@@ -24,9 +23,9 @@ public class PlusOne {
       return sum;
     } else {
       for (int j = 0; j<sum.length-1;j++){
-        sum1[j] = sum[j+1];
+        digits[j] = sum[j+1];
       }
-      return sum1;
+      return digits;
     }
   }
 
