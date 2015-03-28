@@ -12,7 +12,7 @@ import com.bupt.jiameng.leetcode.contructs.TreeNode;
 //            8
 //  pre: 1,2,4,5,3,6,7，8
 //in:4，2，5，1，6，3，7，8
-  1
+//  1
 
 
 public class ConstructBinaryTreefromPreorderandInorderTraversal {
@@ -28,30 +28,34 @@ public class ConstructBinaryTreefromPreorderandInorderTraversal {
     return root;
   }
 
-  public void construct(TreeNode root, int[] preoeder, int[] inorder){
-    if(preoeder.length == 0){
-      root.left = null;
-      root.right = null;
+  public void construct(TreeNode root, int[] preorder, int[] inorder){
+    if(preorder == null && inorder == null){
       return;
-    }else{
-
     }
+
 
     int rootIndex = getIndex(inorder, root.val);//获取中序根节点的位置
     int leftNodeNum = rootIndex;//左子树节点个数
     int rightNodeNum = inorder.length - rootIndex - 1;//右子树节点个数
-    int[] leftpreOrder = getArray(preoeder, 1, leftNodeNum);
-    int[] rightpreOrder = getArray(preoeder, leftNodeNum + 1, preoeder.length - 1);
-    int[] leftinOrder = getArray(inorder, 1, rootIndex - 1);
+    int[] leftpreOrder = getArray(preorder, 1, leftNodeNum);
+    int[] rightpreOrder = getArray(preorder, leftNodeNum + 1, preorder.length - 1);
+    int[] leftinOrder = getArray(inorder, 0, rootIndex - 1);
     int[] rightinOrder = getArray(inorder, rootIndex + 1, inorder.length - 1);
-    //获取左子树根节点，前序和中序
-    construct(new TreeNode(leftpreOrder[0]), leftpreOrder, leftinOrder);
-    construct(new TreeNode(rightpreOrder[0]), rightpreOrder, rightinOrder);
 
-
+    root.left = null;
+    root.right = null;
+    if(leftNodeNum > 0){
+      root.left = new TreeNode(leftpreOrder[0]);
+    }
+    if(rightNodeNum > 0){
+      root.right = new TreeNode(rightpreOrder[0]);
+    }
+    construct(root.left, leftpreOrder, leftinOrder);
+    construct(root.right, rightpreOrder, rightinOrder);
   }
 
   public int[] getArray(int[] orign, int start, int end){
+    if(start > end ) return null;
     int length = end - start + 1;
     int[] tmp = new int[length];
     for(int i = 0; i < length; i++){
