@@ -8,7 +8,6 @@ package com.bupt.jiameng.leetcode.easy;
 public class RemoveElement {
   public int removeElement(int[] A, int elem) {
     if(A==null || A.length<1) return 0;
-    int length = A.length;
     int i =0;
     int j=0;
     while(i<A.length){
