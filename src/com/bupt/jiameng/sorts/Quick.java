@@ -18,18 +18,18 @@ public class Quick {
 
       while(i<j){
 
-        while(i<j && a[j]>=x)
+        while(i<j && a[j]>=x)//从右开始，寻找小于枢轴的数
           j--;
         if(i<j){
           a[i]=a[j];
-          i++;
+//          i++;
         }
 
         while(i<j && a[i]<x)
           i++;
         if(i<j){
           a[j]=a[i];
-          j--;
+//          j--;
         }
       }
       a[i] = x;
@@ -40,9 +40,9 @@ public class Quick {
 
   public static void main(String[] args){
     Quick q = new Quick();
-    int[] a = {5,6,9,7,8};
+    int[] a = {49,38,66,97,38,68,8,9,8,8};
     q.recursion(a,0,a.length-1);
     for(int i: a)
-      System.out.print(i);
+      System.out.print(","+i);
   }
 }
