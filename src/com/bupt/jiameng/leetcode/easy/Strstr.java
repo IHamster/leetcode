@@ -37,4 +37,53 @@ public class Strstr {
 
     return i;
   }
+
+
+  public int kmp(String haystack, String needle) {
+    int i = 0;
+    int j = 0;
+    int hLen = haystack.length();
+    int nLen = needle.length();
+    int[] next = getNext(needle);
+    while (i < hLen && j < nLen) {
+      if (j == -1 || haystack.charAt(i) == needle.charAt(j)) {
+        i++;
+        j++;
+      } else {
+        j = next[j];
+      }
+    }
+
+    if (j == nLen)
+      return i - j;
+    else
+      return -1;
+  }
+
+  public int[] getNext(String needle) {
+    int nLen = needle.length();
+    int[] next = new int[nLen];
+
+    next[0]=-1;
+    int k = -1;
+    int j=0;
+    while(j<nLen-1){
+      if(k==-1 || needle.charAt(j)==needle.charAt(k)){
+        ++k;
+        ++j;
+        next[j]=k;
+      }else{
+        k=next[k];
+      }
+    }
+
+    return next;
+  }
+
+  public static void main(String[] args) {
+    Strstr s = new Strstr();
+    String a = "abnnnfnfnfg";
+    String p = "fnf";
+
+  }
 }
