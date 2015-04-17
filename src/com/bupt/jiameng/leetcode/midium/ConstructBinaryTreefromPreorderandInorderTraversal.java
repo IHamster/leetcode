@@ -1,6 +1,6 @@
 package com.bupt.jiameng.leetcode.midium;
 
-import com.bupt.jiameng.leetcode.contructs.TreeNode;
+import com.bupt.jiameng.contructs.TreeNode;
 
 /**
  * Created by jiameng on 15/3/26.

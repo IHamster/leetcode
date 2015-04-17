@@ -1,7 +1,6 @@
 package com.bupt.jiameng.offer;
 
-import com.bupt.jiameng.leetcode.contructs.ListNode;
-import com.bupt.jiameng.leetcode.contructs.TreeNode;
+import com.bupt.jiameng.contructs.TreeNode;
 
 /**
  * User: jiameng

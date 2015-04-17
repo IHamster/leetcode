@@ -1,6 +1,6 @@
 package com.bupt.jiameng.leetcode.midium;
 
-import com.bupt.jiameng.leetcode.contructs.ListNode;
+import com.bupt.jiameng.contructs.ListNode;
 
 /**
  * User: jiameng

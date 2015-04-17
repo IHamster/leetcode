@@ -1,4 +1,4 @@
-package com.bupt.jiameng.leetcode.contructs;
+package com.bupt.jiameng.contructs;
 
 /**
  * Created by jiameng on 15/3/25.
