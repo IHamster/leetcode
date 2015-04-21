@@ -29,9 +29,10 @@ public class Question28 {
       c[start] = c[i];
       c[i] = tmp;
       recursion(c, start + 1);
-//      tmp = c[start];
-//      c[start]=c[i];
-//      c[i]=tmp;//使数组恢复原状
+      //必须加下面几句，否则顺序就乱了
+      tmp = c[start];
+      c[start]=c[i];
+      c[i]=tmp;
     }
   }
 
