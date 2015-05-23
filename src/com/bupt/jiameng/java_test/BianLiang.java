@@ -1,17 +1,23 @@
 package com.bupt.jiameng.java_test;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * User: jiameng
  * Date: 15/4/6
  * Time: 下午10:49
  */
-public class BianLiang{
+public class BianLiang {
   public int b;
   private final int a;
-  public BianLiang(){
+
+  public BianLiang() {
     a = 1;
   }
-  public static void main(String[] args){
+
+  public static void main(String[] args) {
 //    BianLiang b = new BianLiang();
 //    System.out.println(b.b);
 //    int a = -10>>1;
@@ -42,12 +48,20 @@ public class BianLiang{
 //      System.out.println("false");
 //int c = 9;
 //    System.out.println(c>>1);
-    int c = -2147483647;
-        System.out.println(Integer.toBinaryString(c));
-        System.out.println(Integer.toBinaryString(c<<1));
-    System.out.println(c<<1);
+//    int c = -2147483647;
+//        System.out.println(Integer.toBinaryString(c));
+//        System.out.println(Integer.toBinaryString(c<<1));
+//    System.out.println(c<<1);
+//
+//    StringBuilder sb = new StringBuilder();
+//    String a = "";
+    char[] a = new char[2];
+//    System.out.println(a[1]);
+//    String
 
-    StringBuilder sb = new StringBuilder();
-    String a = "";
+    AtomicInteger value = new AtomicInteger();
+    System.out.println(value);
   }
+
+
 }
