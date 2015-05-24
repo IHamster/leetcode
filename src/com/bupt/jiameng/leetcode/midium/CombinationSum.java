@@ -45,12 +45,19 @@ public class CombinationSum {
     if(sum > target)
       return;
     for(int i = curIndex;i<candidates.length;i++){
-      sum += candidates[i];
-      if(sum > target) return;
       List<Integer> tmp  = new ArrayList<Integer>(list);
       tmp.add(candidates[i]);
-      recursion(candidates, i,sum,target,tmp);
-      sum -= candidates[i];
+      recursion(candidates, i,sum + candidates[i],target,tmp);
+
+      int j = i+1;
+      while(j<candidates.length){
+        if(candidates[j] == candidates[i]){
+          ++j;
+        }else {
+          i=j-1;
+          break;
+        }
+      }
     }
   }
 
