@@ -46,6 +46,7 @@ public class CombinationSum {
       return;
     for(int i = curIndex;i<candidates.length;i++){
       sum += candidates[i];
+      if(sum > target) return;
       List<Integer> tmp  = new ArrayList<Integer>(list);
       tmp.add(candidates[i]);
       recursion(candidates, i,sum,target,tmp);
