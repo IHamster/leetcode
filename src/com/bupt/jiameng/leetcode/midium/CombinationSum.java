@@ -54,10 +54,10 @@ public class CombinationSum {
         if(candidates[j] == candidates[i]){
           ++j;
         }else {
-          i=j-1;
           break;
         }
       }
+      i=j-1;
     }
   }
 
