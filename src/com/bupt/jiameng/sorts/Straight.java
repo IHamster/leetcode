@@ -7,17 +7,28 @@ package com.bupt.jiameng.sorts;
 //1,3,5,6,9,8
 
 public class Straight {
-  public void sort(int[] a) {
-    if (a == null || a.length < 1) return;
+  public void sort(int[] nums) {
+    if (nums == null || nums.length < 1) return;
 
-    int length = a.length;
-    for (int i = 1; i < length; i++) {
-      int tmp = a[i];
+//    int length = a.length;
+//    for (int i = 1; i < length; i++) {
+//      int tmp = a[i];
+//      int j;
+//      for (j = i - 1; j >= 0 && a[j] > tmp; j--) {
+//        a[j + 1] = a[j];
+//      }
+//      a[j + 1] = tmp;
+//    }
+
+    for (int i = 1; i < nums.length; i++) {
+      int tmp = nums[i];
       int j;
-      for (j = i - 1; j >= 0 && a[j] > tmp; j--) {
-        a[j + 1] = a[j];
+      for (j = i - 1; j >= 0; j--) {
+        if (tmp < nums[j])
+          nums[j + 1] = nums[j];
+        else break;
       }
-      a[j + 1] = tmp;
+      nums[j+1]=tmp;
     }
 
   }
