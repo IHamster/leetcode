@@ -31,4 +31,8 @@ public class Student {
   public int getScore(){
     return this.score;
   }
+
+  private void print(){
+    System.out.println("hahahahaahah");
+  }
 }
