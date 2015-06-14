@@ -41,6 +41,7 @@ public class LoggingHandler  implements InvocationHandler{
 
   public static void main(String[] args){
     LoggingHandler log =  new LoggingHandler();
+    System.out.println(System.getProperty("java.class.path"));
 
   }
 }
