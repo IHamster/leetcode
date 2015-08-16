@@ -30,7 +30,7 @@ public class Subsets2 {
 
   public List<List<Integer>> subsetsWithDup(int[] nums) {
     if (nums == null || nums.length < 1) return result;
-    Arrays.sort(nums);
+    Arrays.sort(nums);//先排序
     List<Integer> list = new ArrayList<Integer>();
     result.add(list);
     handler(nums, 0, list);
@@ -41,7 +41,7 @@ public class Subsets2 {
     if (start == nums.length) return;
 
     for (int i = start; i < nums.length; i++) {
-      if (i != start && nums[i] == nums[i-1])
+      if (i != start && nums[i] == nums[i-1])//主意这里的比较 ，nums[i] == nums[i-1]
         continue;
       list.add(nums[i]);
       result.add(new ArrayList<Integer>(list));
